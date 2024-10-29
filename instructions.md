@@ -20,3 +20,9 @@ We need to build the IT system for a library.
 - We will have to store the list of users in the database
 - Users must have an id, a name, and a status.
 - We wil have to store the list of ongoing borrowings in the database.
+
+## Notes
+
+Some operations should happen atomically
+- When a user borrows a book, the book must be marked as borrowed and a task should be scheduled.
+- When we process this task, we need atomically to move the book from borrowed to lost, and the ban the user.

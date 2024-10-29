@@ -54,7 +54,7 @@ public class Book {
 		updateStatus(BookStatus.DESTROYED);
 	}
 
-	private Borrowing getBorrowingOrThrow(BorrowingId borrowingId) {
+	public Borrowing getBorrowingOrThrow(BorrowingId borrowingId) {
 		return borrowings.stream()
 				.filter(b -> b.getId().equals(borrowingId))
 				.findFirst()
